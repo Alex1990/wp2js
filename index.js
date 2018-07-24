@@ -300,10 +300,12 @@ wp2js.parse = function(opts, callback){
             ret[v] = result[i];
         });
 
-        ret.posts = ret.pages = ret.attachments = [];
+        ret.posts = [];
+        ret.pages = [];
+        ret.attachments = [];
 
         // Filter the different post type
-        result[8].forEach(function(v){
+        result[10].forEach(function(v){
             switch(v.type) {
                 case 'post':
                     ret.posts.push(v);
